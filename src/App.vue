@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <!-- component header -->
+    <c-header />
+
+    <!-- component sidebar -->
+    <c-side-bar />
+
+    <!-- konten utama -->
+    <v-content>
+      <v-slide-y-transition mode="out-in">
+        <router-view></router-view>
+      </v-slide-y-transition>
+    </v-content>
+
+    <!-- component footer -->
+    <c-footer />
+  </v-app>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style type="text/css">
+  .v-toolbar {
+    flex: 0 !important;
+  }
+  .v-application .py-3 {
+    text-align: center !important;
+  }
+  .v-card-text {
+    text-align: center !important;
+  }
 </style>
+<script>
+import CHeader from '@/components/CHeader.vue'
+import CFooter from '@/components/CFooter.vue'
+import CSideBar from '@/components/CSideBar.vue'
+export default {
+  name: 'App',
+  components: {
+    CHeader,
+    CFooter,
+    CSideBar
+  }
+}
+</script>
