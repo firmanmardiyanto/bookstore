@@ -1,7 +1,7 @@
 <template>
     <v-footer dark height="auto" color="secondary">
         <v-flex xs12>
-            <v-card flat tile class="white--text text-xs-center" color="secondary">
+            <v-card flat tile class="white--text text-center" color="secondary">
                 <!-- menu icon sosial media -->
                 <v-card-text>
                     <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
@@ -32,7 +32,6 @@
                 'fab fa-facebook',
                 'fab fa-twitter',
                 'fab fa-google-plus',
-                'fab fa-linkendin',
                 'fab fa-instagram'
             ],
             //variable link halaman yang ingin ditampilkan

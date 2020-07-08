@@ -5,9 +5,8 @@
 
     <!-- component sidebar -->
     <c-side-bar />
-
     <!-- konten utama -->
-    <v-content>
+    <v-content id="scrolling-techniques-7">
       <v-slide-y-transition mode="out-in">
         <router-view></router-view>
       </v-slide-y-transition>

@@ -2,7 +2,7 @@
     <v-navigation-drawer v-model="drawer" absolute temporary>
         <!-- header toolbar pada sidebar -->
 
-        <v-toolbar dark color="primary">
+        <v-toolbar dark>
             <v-btn icon dark @click="drawer=false">
                 <v-icon>mdi-close</v-icon>
                 </v-btn>
@@ -18,7 +18,7 @@
             </v-list-item>
             <v-list-item>
                 <!-- tombol Login -->
-                <v-btn block rounded depressed color="accent lighten-1" class="white--text">
+                <v-btn block rounded depressed class="white--text">
                     Login <v-icon right dark> lock_open </v-icon>
                     </v-btn>
             </v-list-item>
