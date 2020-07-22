@@ -27,7 +27,7 @@
       solo-inverted
     ></v-text-field>
     <!-- header bagian kanan -->
-    <v-btn icon>
+    <v-btn icon @click="cart()">
       <v-badge left overlap color="green">
         <span slot="badge" v-if="countCart > 0">{{ countCart }}</span>
         <span slot="badge" v-else>0</span>
@@ -37,29 +37,34 @@
   </v-app-bar>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from "vuex";
 export default {
-    name: 'c-header',
-    methods: {
-        ...mapActions({
-            setSideBar: 'setSideBar',
-            setStatusDialog: 'dialog/setStatus',
-            setComponent : 'dialog/setComponent',
-        }),
-        search() {
-            this.setStatusDialog(true)
-            this.setComponent('search')
-            this.setSideBar(false)
-        }
+  name: "c-header",
+  methods: {
+    ...mapActions({
+      setSideBar: "setSideBar",
+      setStatusDialog: "dialog/setStatus",
+      setComponent: "dialog/setComponent",
+    }),
+    search() {
+      this.setStatusDialog(true);
+      this.setComponent("search");
+      this.setSideBar(false);
     },
-    computed: {
-        ...mapGetters({
-            sideBar: 'sideBar',
-            countCart : 'cart/count'
-        }),
-        isHome () {
-            return (this.$route.path==='/')
-        },
-    }
-}
+    cart() {
+      this.setStatusDialog(true);
+      this.setComponent("cart");
+      this.setSideBar(false);
+    },
+  },
+  computed: {
+    ...mapGetters({
+      sideBar: "sideBar",
+      countCart: "cart/count",
+    }),
+    isHome() {
+      return this.$route.path === "/";
+    },
+  },
+};
 </script>
