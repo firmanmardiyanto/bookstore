@@ -203,6 +203,7 @@ export default {
       setProvinces: "region/setProvinces",
       setCities: "region/setCities",
       setCart: "cart/set",
+      setPayment: "setPayment",
     }),
     saveShipping() {
       let formData = new FormData();

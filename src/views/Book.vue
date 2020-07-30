@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -63,16 +63,16 @@ export default {
   },
   methods: {
     ...mapActions({
-        addCart: "cart/add",
-        setAlert : "alert/set",
+      addCart: "cart/add",
+      setAlert: "alert/set",
     }),
     buy() {
       this.addCart(this.book);
       this.setAlert({
-          status: true,
-          text : 'Added to cart',
-          type : 'success',
-      })
+        status: true,
+        text: "Added to cart",
+        type: "success",
+      });
     },
   },
   created() {
